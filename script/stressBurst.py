@@ -102,7 +102,7 @@ class GalleryTest(unittest.TestCase):
         if not d(text = 'Gallery').wait.exists(timeout = 2000):
             d(resourceId = 'android:id/up').click.wait()
         for i in range(0,100):
-            d(index = 7).click.wait()
+            d(index = 6).click.wait()
             assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'
             self._pressBack(1)
             time.sleep(1)          
@@ -129,7 +129,7 @@ class GalleryTest(unittest.TestCase):
         assert d(text = 'Recent').wait.exists(timeout=2000),'enter choose photo from gallery menu fail'
         d(text = 'Recent').click.wait()
         for i in range(0,100):
-            d(index = 7).click.wait()
+            d(index = 6).click.wait()
             assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'
             self._pressBack(1)
             time.sleep(1)
