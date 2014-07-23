@@ -47,7 +47,7 @@ class GalleryTest(unittest.TestCase):
         # Step 2
         u.enterXView('gridview')
         for i in range(100):
-            d.click(1260,800)          
+            #d.click(1260,800)          
             u.setMenuOptions('Slideshow')
             d(text = 'Cine Effect').click()
             time.sleep(3)
@@ -68,7 +68,7 @@ class GalleryTest(unittest.TestCase):
         # Step 2
         u.enterXView('gridview')
         for i in range(100):
-            d.click(1260,800) 
+            #d.click(1260,800) 
             u.setMenuOptions('Slideshow')
             d(text = 'Dissolve').click()
             time.sleep(3)
