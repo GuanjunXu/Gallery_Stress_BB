@@ -11,7 +11,7 @@ script.stress.GalleryTest.testSlideShowWithDissolve = 1
 #script.stressFullView.GalleryTest.testAddEvent = 1
 #script.stressFullView.GalleryTest.testAddPlace = 1
 #script.stressFullView.GalleryTest.testTagOnePicture = 1
-script.stressFullView.GalleryTest.testSetAsContact = 1
+#script.stressFullView.GalleryTest.testSetAsContact = 1
 #script.stressFullView.GalleryTest.testSetAsWallpaper = 1
 #script.stressFullView.GalleryTest.testViewPicture = 1
 #script.stressFullView.GalleryTest.testUPIcon = 1
@@ -21,5 +21,5 @@ script.stressFullView.GalleryTest.testSetAsContact = 1
 
 #script.stressBurst.GalleryTest.testLaunchGalleryFromMS = 1
 #script.stressBurst.GalleryTest.testLaunchGalleryFromMMS = 1
-script.stressBurst.GalleryTest.testLaunchGalleryFromEmail = 1
-script.stressBurst.GalleryTest.testLaunchGalleryFromContact = 1
+#script.stressBurst.GalleryTest.testLaunchGalleryFromEmail = 1
+#script.stressBurst.GalleryTest.testLaunchGalleryFromContact = 1
