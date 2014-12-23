@@ -29,15 +29,12 @@ class GalleryTest(unittest.TestCase):
     def setUp(self):
         super(GalleryTest,self).setUp()
         #Add on May 26th due to device always reboot by itself
-        if d(text = 'Charged').wait.exists(timeout = 2000):
-            commands.getoutput('adb root')
-            time.sleep(5)
-            commands.getoutput('adb remount')
-            d.swipe(530,1300,1000,1300)
-
-
-
-   
+        #if d(text = 'Charged').wait.exists(timeout = 2000):
+         #   commands.getoutput('adb root')
+          #  time.sleep(5)
+           # commands.getoutput('adb remount')
+            #d.swipe(530,1300,1000,1300)
+        u.unlockScreen()
 
     def tearDown(self):
         super(GalleryTest,self).tearDown()

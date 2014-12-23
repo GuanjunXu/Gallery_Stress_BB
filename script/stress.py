@@ -15,11 +15,12 @@ class GalleryTest(unittest.TestCase):
     def setUp(self):
         super(GalleryTest,self).setUp()
         #Add on May 26th due to device always reboot by itself
-        if d(text = 'Charged').wait.exists(timeout = 2000):
-            commands.getoutput('adb root')
-            time.sleep(5)
-            commands.getoutput('adb remount')
-            d.swipe(530,1300,100,1300)
+        #if d(text = 'Charged').wait.exists(timeout = 2000):
+         #   commands.getoutput('adb root')
+          #  time.sleep(5)
+           # commands.getoutput('adb remount')
+            #d.swipe(530,1300,100,1300)
+        u.unlockScreen()
         # clear test resource
         #self.util = util.Util
         u._clearAllResource()
@@ -53,7 +54,7 @@ class GalleryTest(unittest.TestCase):
             time.sleep(3)
             # Since automation can't check this point, if it back to gridview treat it as pass.
             u.pressBack(1)
-            assert d(description = 'Switch to camera').wait.exists(timeout = 2000)
+            assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
 
     # Testcase 2
     def testSlideShowWithDissolve(self):
@@ -74,7 +75,7 @@ class GalleryTest(unittest.TestCase):
             time.sleep(3)
             # Since automation can't check this point, if it back to gridview treat it as pass.
             u.pressBack(1)
-            assert d(description = 'Switch to camera').wait.exists(timeout = 2000)
+            assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
 
     # Testcase 3
     def testSlideShowWithFlash(self):
@@ -95,7 +96,7 @@ class GalleryTest(unittest.TestCase):
             time.sleep(3)
             # Since automation can't check this point, if it back to gridview treat it as pass.
             u.pressBack(1)
-            assert d(description = 'Switch to camera').wait.exists(timeout = 2000)
+            assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
 
     # Testcase 4
     def testSelectDeselectAll(self):
@@ -109,7 +110,7 @@ class GalleryTest(unittest.TestCase):
         """
         # Step 1
         u.enterXView('gridview')
-        d.click(1260,800)
+        #d.click(1260,800)
         for i in range(100):
             self._longtouchscreencenter()
             # Step 4 + Step 5
@@ -118,7 +119,7 @@ class GalleryTest(unittest.TestCase):
             # Step 6 + Step 7
             d(className = 'android.widget.ImageButton').click.wait()
             d(text = 'Deselect all').click()
-            assert d(description = 'Switch to camera').wait.exists(timeout = 2000)
+            assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
             time.sleep(2)
 
     # Testcase 5
@@ -147,14 +148,14 @@ class GalleryTest(unittest.TestCase):
             #Step 1 + Step 2
             d(description = 'Switch to camera').click.wait()
             if  d(text = 'Complete action using').wait.exists(timeout = 2000):
-                d(text = 'com.intel.camera22').click.wait()
+                d(text = 'Camera').click.wait()
             if d(text = 'Always').wait.exists(timeout = 2000):
                 d(text = 'Always').click.wait()
             # confirm camera launched
-            if d(text = 'OK').wait.exists(timeout = 2000):
-                d(text = 'OK').click.wait()
-            if d(text = 'Cancel').wait.exists(timeout = 2000):
-                d(text = 'Cancel').click.wait()
+            if d(text = 'No thanks').wait.exists(timeout = 2000):
+                d(text = 'Yes').click.wait()
+            if d(text = 'Skip').wait.exists(timeout = 2000):
+                d(text = 'Skip').click.wait()
             time.sleep(3)
             assert d(description = 'Shutter button').wait.exists(timeout = 2000)
             u.pressBack(1)

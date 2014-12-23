@@ -21,11 +21,12 @@ class GalleryTest(unittest.TestCase):
     def setUp(self):
         super(GalleryTest,self).setUp()
         #Add on May 26th due to device always reboot by itself
-        if d(text = 'Charged').wait.exists(timeout = 2000):
-            commands.getoutput('adb root')
-            time.sleep(5)
-            commands.getoutput('adb remount')
-            d.swipe(530,1300,1000,1300)
+        #if d(text = 'Charged').wait.exists(timeout = 2000):
+         #   commands.getoutput('adb root')
+          #  time.sleep(5)
+           # commands.getoutput('adb remount')
+            #d.swipe(530,1300,1000,1300)
+        u.unlockScreen()
         u._clearAllResource()
         
 
@@ -141,7 +142,7 @@ class GalleryTest(unittest.TestCase):
         u.showPopCard()
         for i in range(2):
             d.press('back') #If it goes to fullview suc, it shall back to the grid view after pressing back key
-            assert d(description = 'Switch to camera').wait.exists(timeout = 2000)
+            assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
             u.pressBack(4)
             u.launchGallery()
             u.enterXView('fullview')
@@ -153,7 +154,7 @@ class GalleryTest(unittest.TestCase):
         u.showPopCard()
         for i in range(2):
             d(resourceId = 'android:id/home').click.wait()
-            assert d(description = 'Switch to camera').wait.exists(timeout = 2000)
+            assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
             u.pressBack(4)
             u.launchGallery()
             u.enterXView('fullview')
