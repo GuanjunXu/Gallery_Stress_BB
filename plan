@@ -1,6 +1,6 @@
 [tests]
 #script.stress.GalleryTest.testSwitchToCamera = 1
-script.stress.GalleryTest.testSlideShowWithCine = 1
+#script.stress.GalleryTest.testSlideShowWithCine = 1
 #script.stress.GalleryTest.testSlideShowWithDissolve = 1
 script.stress.GalleryTest.testSlideShowWithFlash = 1
 #script.stress.GalleryTest.testLaunchGallery = 1
