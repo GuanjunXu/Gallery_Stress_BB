@@ -8,14 +8,14 @@
 
 #script.stressFullView.GalleryTest.testCropPicture = 1
 #script.stressFullView.GalleryTest.testCropPictureCancel = 1
-script.stressFullView.GalleryTest.testAddEvent = 1
-script.stressFullView.GalleryTest.testAddPlace = 1
-script.stressFullView.GalleryTest.testTagOnePicture = 1
+#script.stressFullView.GalleryTest.testAddEvent = 1
+#script.stressFullView.GalleryTest.testAddPlace = 1
+#script.stressFullView.GalleryTest.testTagOnePicture = 1
 script.stressFullView.GalleryTest.testSetAsContact = 1
 script.stressFullView.GalleryTest.testSetAsWallpaper = 1
-script.stressFullView.GalleryTest.testViewPicture = 1
-script.stressFullView.GalleryTest.testUPIcon = 1
-script.stressFullView.GalleryTest.testSlidePicture = 1
+#script.stressFullView.GalleryTest.testViewPicture = 1
+#script.stressFullView.GalleryTest.testUPIcon = 1
+#script.stressFullView.GalleryTest.testSlidePicture = 1
 script.stressFullView.GalleryTest.testDeleteOneByOne = 1
 script.stressFullView.GalleryTest.testPlayPauseVideo = 1
 
