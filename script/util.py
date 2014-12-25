@@ -69,7 +69,7 @@ class Util():
         if d(text = 'View photonotes').wait.exists(timeout = 2000):
             d(text = 'View photonotes').click.wait()
         else:
-            d.click(self.getSizeOfGallery()[4], self.getSizeOfGallery()[0] + 1)
+            d.click(self.getSizeOfGallery()[4], self.getSizeOfGallery()[5])
         time.sleep(1)
 
     def holdTheCenter(self):
