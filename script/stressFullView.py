@@ -222,7 +222,7 @@ class GalleryTest(unittest.TestCase):
         commands.getoutput('adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard')
 
     def _setPicAs(self,setact):
-        d.press('menu')
+        d(description = 'More options').click.wait()
         d(text = 'Set picture as').click.wait()
         setmode = {'contact':'Contact photo', 'wallpaper':'Gallery'}
         d(text = setmode[setact]).click.wait()
