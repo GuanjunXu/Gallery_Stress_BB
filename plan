@@ -16,7 +16,7 @@ script.stressFullView.GalleryTest.testSetAsWallpaper = 1
 #script.stressFullView.GalleryTest.testViewPicture = 1
 #script.stressFullView.GalleryTest.testUPIcon = 1
 #script.stressFullView.GalleryTest.testSlidePicture = 1
-script.stressFullView.GalleryTest.testDeleteOneByOne = 1
+#script.stressFullView.GalleryTest.testDeleteOneByOne = 1
 #script.stressFullView.GalleryTest.testPlayPauseVideo = 1
 
 #script.stressBurst.GalleryTest.testLaunchGalleryFromMS = 1
