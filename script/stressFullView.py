@@ -110,7 +110,7 @@ class GalleryTest(unittest.TestCase):
                 try:
                     assert d(text = 'Always', enabled = 'true').wait.exists(timeout = 2000)
                 except:
-                    d(text = 'com.intel.android.gallery3d').click.wait()
+                    d(text = 'Gallery').click.wait()
                 finally:
                     d(text = 'Always').click.wait()
             time.sleep(2)
@@ -128,7 +128,7 @@ class GalleryTest(unittest.TestCase):
                 try:
                     assert d(text = 'Always', enabled = 'true').wait.exists(timeout = 2000)
                 except:
-                    d(text = 'com.intel.android.gallery3d').click.wait()
+                    d(text = 'Gallery').click.wait()
                 finally:
                     d(text = 'Always').click.wait()
             d(text = 'Crop').click.wait()
@@ -193,7 +193,7 @@ class GalleryTest(unittest.TestCase):
                 try:
                     assert d(text = 'Always', enabled = 'true').wait.exists(timeout = 2000)
                 except:
-                    d(text = 'com.intel.android.gallery3d').click.wait()
+                    d(text = 'Video player').click.wait()
                 finally:
                     d(text = 'Always').click.wait()
             time.sleep(10) #Play video file 10 s
@@ -224,7 +224,7 @@ class GalleryTest(unittest.TestCase):
     def _setPicAs(self,setact):
         d.press('menu')
         d(text = 'Set picture as').click.wait()
-        setmode = {'contact':'Contact photo', 'wallpaper':'com.intel.android.gallery3d'}
+        setmode = {'contact':'Contact photo', 'wallpaper':'Gallery'}
         d(text = setmode[setact]).click.wait()
 
     def _tapOnDoneButton(self):

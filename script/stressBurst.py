@@ -173,7 +173,7 @@ class GalleryTest(unittest.TestCase):
         if d(resourceId = 'android:id/home').wait.exists(timeout=1000):
             assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'      
         else:
-            d(text = 'com.intel.android.gallery3d').click.wait()
+            d(text = 'Gallery').click.wait()
             time.sleep(1)
             d(text = 'Always').click.wait()
             time.sleep(1)             
