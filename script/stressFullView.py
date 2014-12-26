@@ -105,7 +105,7 @@ class GalleryTest(unittest.TestCase):
         u.showPopCard()
         for i in range(2):
             self._setPicAs('contact')
-            d(index = 2).click.wait()
+            d(index = 2, resourceId = 'com.android.contacts:id/cliv_name_textview').click.wait()
             if d(text = 'Complete action using').wait.exists(timeout = 2000):
                 try:
                     assert d(text = 'Always', enabled = 'true').wait.exists(timeout = 2000)
