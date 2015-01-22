@@ -110,7 +110,7 @@ class GalleryTest(unittest.TestCase):
                 try:
                     assert d(text = 'Always', enabled = 'true').wait.exists(timeout = 2000)
                 except:
-                    d(text = 'Gallery').click.wait()
+                    d(text = 'Crop picture').click.wait()
                 finally:
                     d(text = 'Always').click.wait()
             time.sleep(2)
@@ -128,7 +128,7 @@ class GalleryTest(unittest.TestCase):
                 try:
                     assert d(text = 'Always', enabled = 'true').wait.exists(timeout = 2000)
                 except:
-                    d(text = 'Gallery').click.wait()
+                    d(text = 'Crop picture').click.wait()
                 finally:
                     d(text = 'Always').click.wait()
             d(text = 'Crop').click.wait()
@@ -224,7 +224,7 @@ class GalleryTest(unittest.TestCase):
     def _setPicAs(self,setact):
         d(description = 'More options').click.wait()
         d(text = 'Set picture as').click.wait()
-        setmode = {'contact':'Contact photo', 'wallpaper':'Gallery'}
+        setmode = {'contact':'Contact photo', 'wallpaper':'Wallpaper'}
         d(text = setmode[setact]).click.wait()
 
     def _tapOnDoneButton(self):

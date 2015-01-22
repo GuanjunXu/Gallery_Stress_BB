@@ -106,8 +106,8 @@ class GalleryTest(unittest.TestCase):
 
     def testLaunchGalleryFromContact(self):
         self._launchContact()
-        assert d(resourceId = 'com.android.contacts:id/menu_add_contact').wait.exists(timeout=1000),'unable to add new contacts'
-        d(resourceId = 'com.android.contacts:id/menu_add_contact').click.wait()
+        assert d(resourceId = 'com.android.contacts:id/floating_action_button').wait.exists(timeout=1000),'unable to add new contacts'
+        d(resourceId = 'com.android.contacts:id/floating_action_button').click.wait()
         if d(text ='Create contact').wait.exists(timeout =1000):
             d(text ='Create contact').click.wait()
         if d(text = 'Always').wait.exists(timeout = 2000):
