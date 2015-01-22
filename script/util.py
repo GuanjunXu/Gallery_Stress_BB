@@ -55,7 +55,7 @@ class Util():
         bottom        = gallerybounds['bottom']
         left          = gallerybounds['left']
         right         = gallerybounds['right']
-        centerx       = (left + right)/2
+        centerx       = (left + right)/2-20
         centery       = (top + bottom)/2
         return top, bottom, left, right, centerx, centery
 
