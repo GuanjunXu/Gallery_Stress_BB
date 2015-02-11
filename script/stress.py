@@ -9,7 +9,7 @@ import random
 
 u = util.Util()
 FLITER_LIST = ['Albums','Places','Events','Dates','People','Camera Roll','Media']
-
+MODE_LIST = ['Places','People','Media','Events','Albums','Dates']
 class GalleryTest(unittest.TestCase):
 
     def setUp(self):
@@ -174,6 +174,23 @@ class GalleryTest(unittest.TestCase):
             fliter_list = random.choice(FLITER_LIST)
             u.selectFilter(fliter_list)
             assert d(text = fliter_list).wait.exists(timeout = 2000)
+    # Testcase 8
+    def testChangeMode(self):
+        """
+        Summary: Change Mode
+        Step:
+        1. Launch SocialGallery app
+        2. Change every mode
+        3. 
+        """
+        # Step 2
+        for i in range(20): 
+            #u.enterXView('fullview')
+            for j in range(6):
+                d(resourceId = 'android:id/up').click.wait()
+                d(text = MODE_LIST[j]).click.wait()
+                assert d(text = MODE_LIST[j]).wait.exists(timeout = 2000)
+
 
     def _longtouchscreencenter(self):
         d.swipe(1260,800,1158,805)
