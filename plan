@@ -23,3 +23,4 @@ script.stressFullView.GalleryTest.testSetAsContact = 1
 #script.stressBurst.GalleryTest.testLaunchGalleryFromMMS = 1
 #script.stressBurst.GalleryTest.testLaunchGalleryFromEmail = 1
 #script.stressBurst.GalleryTest.testLaunchGalleryFromContact = 1
+script.stress.GalleryTest.testChangeMode = 1
