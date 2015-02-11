@@ -103,7 +103,7 @@ class GalleryTest(unittest.TestCase):
             assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'
             self._pressBack(1)
             time.sleep(1)          
-
+    '''
     def testLaunchGalleryFromContact(self):
         self._launchContact()
         assert d(resourceId = 'com.android.contacts:id/floating_action_button').wait.exists(timeout=1000),'unable to add new contacts'
@@ -130,7 +130,40 @@ class GalleryTest(unittest.TestCase):
             assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'
             self._pressBack(1)
             time.sleep(1)
-
+    '''
+    def testLaunchGalleryFromContact(self):
+        self._launchContact()
+        self._pressBack(1)
+        time.sleep(1)
+        self._launchContact()
+        assert d(resourceId = 'com.android.contacts:id/floating_action_button').wait.exists(timeout=1000),'unable to add new contacts'
+        d(resourceId = 'com.android.contacts:id/floating_action_button').click.wait()
+        
+        if d(text ='Create contact').wait.exists(timeout =1000):
+            d(text ='Create contact').click.wait()
+        if d(text = 'Always').wait.exists(timeout = 2000):
+            d(text = 'Always').click.wait()
+        
+        if d(text ='Keep local').wait.exists(timeout =1000):
+            d(text ='Keep local').click.wait()
+        time.sleep(1)
+        
+        if d(text ='OK').wait.exists(timeout =1000):
+            d(text ='OK').click.wait()
+        #assert d(text = 'Done').wait.exists(timeout=1000),'create new contact fail' 
+        
+        d(resourceId = 'com.android.contacts:id/frame').click.wait()
+        time.sleep(1)
+        assert d(text = 'Choose photo').wait.exists(timeout=1000),'enter select photo menu fail'
+        d(text = 'Choose photo').click.wait()
+        time.sleep(2)
+        assert d(text = 'Recent').wait.exists(timeout=2000),'enter choose photo from gallery menu fail'
+        d(text = 'Recent').click.wait()
+        for i in range(0,10):
+            d(index = 5).click.wait()
+            assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'
+            self._pressBack(1)
+            time.sleep(1)
 
 
 
