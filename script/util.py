@@ -43,6 +43,7 @@ class Util():
         if d(text = 'Camera Roll').wait.exists(timeout = 3000):
             d(text = 'Camera Roll').click.wait()
             d(text = 'Albums').click.wait()
+            self.setMenuOptions('Sort by name, A-Z')
         time.sleep(1) #Switch filter may take a few seconds
 
     def selectFilter(self,galleryfilter):
@@ -134,7 +135,10 @@ class Util():
             d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').click.wait()
         else:
             d(description = 'More options').click.wait()
-            d(text = setoption).click.wait()
+            if d(text = setoption).wait.exists(timeout = 1000):
+                d(text = setoption).click.wait()
+            else:
+                d.press('back')
         if d(text = 'Choose an action').wait.exists(timeout = 2000):
             d(text = 'com.intel.android.gallery3d').click.wait()
 
