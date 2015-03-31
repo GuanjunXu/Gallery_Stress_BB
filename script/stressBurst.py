@@ -90,16 +90,16 @@ class GalleryTest(unittest.TestCase):
 # test case 3
     def testLaunchGalleryFromEmail(self):
         self._launchemail()
-        d(resourceId = 'com.android.email:id/compose').click.wait()
+        d(resourceId = 'com.android.email:id/compose_button').click.wait()
         time.sleep(1)
-        assert d(className = 'android.widget.ImageButton').wait.exists(timeout=1000),'enter new email fail'   
-        d(className = 'android.widget.ImageButton').click.wait()
-        assert d(text = 'Attach picture').wait.exists(timeout=1000),'enter menu fail'  
-        d(text = 'Attach picture').click.wait()
+        assert d(resourceId = 'com.android.email:id/add_attachment').wait.exists(timeout=1000),'enter new email fail'   
+        d(resourceId = 'com.android.email:id/add_attachment').click.wait()
+        assert d(text = 'Attach file').wait.exists(timeout=1000),'enter menu fail'  
+        d(text = 'Attach file').click.wait()
         if not d(text = 'Gallery').wait.exists(timeout = 2000):
             d(resourceId = 'android:id/up').click.wait()
         for i in range(0,100):
-            d(index = 6).click.wait()
+            d(text = 'Gallery').click.wait()
             assert d(packageName = 'com.intel.android.gallery3d').wait.exists(timeout =2000),'enter gallery fail'
             self._pressBack(1)
             time.sleep(1)          
@@ -227,7 +227,7 @@ class GalleryTest(unittest.TestCase):
             #print 'login the email account'
             pass          
         else:
-            assert d(resourceId = 'com.android.email:id/compose').wait.exists(timeout=2000),'enter email fail'
+            assert d(resourceId = 'com.android.email:id/compose_button').wait.exists(timeout=2000),'enter email fail'
         time.sleep(1)                
 
 
