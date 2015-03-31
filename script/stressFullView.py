@@ -40,7 +40,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(10):
+        for i in range(100):
             u.setMenuOptions('Crop')
             assert d(text = 'Crop picture').wait.exists(timeout = 3000)
             d(text = 'Crop').click.wait()
@@ -51,7 +51,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(10):
+        for i in range(100):
             u.setMenuOptions('Crop')
             assert d(text = 'Crop picture').wait.exists(timeout = 3000)
             d(text = 'Cancel').click.wait()
@@ -62,7 +62,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(10):
+        for i in range(100):
             self._addKeyWordEventVenue('event',"shangban")
             time.sleep(1)
             assert d(text = 'shangban').wait.exists(timeout =2000),'add event fail' 
@@ -78,7 +78,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(10):
+        for i in range(100):
             self._addKeyWordEventVenue('venue',"kaihui")
             time.sleep(1)
             assert d(text = 'kaihui').wait.exists(timeout =2000),'add event fail' 
@@ -93,7 +93,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(10):
+        for i in range(100):
             self._addKeyWordEventVenue('Keyword',"test-%s" %i) 
             time.sleep(1)   
             assert d(text = "test-%s" %i).wait.exists(timeout =2000),'add tag fail'  
@@ -103,7 +103,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(2):
+        for i in range(100):
             self._setPicAs('contact')
             d(index = 2, resourceId = 'com.android.contacts:id/cliv_name_textview').click.wait()
             if d(text = 'Complete action using').wait.exists(timeout = 2000):
@@ -122,7 +122,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(2):
+        for i in range(100):
             self._setPicAs('wallpaper')
             if d(text = 'Complete action using').wait.exists(timeout = 2000):
                 try:
@@ -140,7 +140,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(2):
+        for i in range(100):
             d.press('back') #If it goes to fullview suc, it shall back to the grid view after pressing back key
             assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
             u.pressBack(4)
@@ -152,7 +152,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(2):
+        for i in range(100):
             d(resourceId = 'android:id/home').click.wait()
             assert d(resourceId = 'com.intel.android.gallery3d:id/action_slideshow').wait.exists(timeout = 2000)
             u.pressBack(4)
@@ -168,7 +168,7 @@ class GalleryTest(unittest.TestCase):
         d.click(550,150)
         time.sleep(10)
         assert d(description = 'Share').wait.exists(timeout = 5000), 'Pop card does not display after tapping on the top bar twice'       
-        for i in range(2):
+        for i in range(5):
             for j in range(10):
                 self._slideImageRtoL()
             for k in range(10):
@@ -179,7 +179,7 @@ class GalleryTest(unittest.TestCase):
         u.launchGallery()
         u.enterXView('fullview')
         u.showPopCard()
-        for i in range(2):
+        for i in range(100):
             u.setMenuOptions('Delete')
             d(text = 'Delete').click.wait() #Confirm it
 
@@ -187,7 +187,7 @@ class GalleryTest(unittest.TestCase):
         self._clearAndPushVideo()
         u.launchGallery()
         u.enterXView('fullview')
-        for i in range(10):
+        for i in range(100):
             u.tapOnCenter() #Press playback icon
             if d(text = 'Complete action using').wait.exists(timeout = 2000):
                 try:
